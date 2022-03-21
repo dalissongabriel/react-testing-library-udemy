@@ -1,7 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { grey, red } from "@mui/material/colors";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { ScoopOptions } from "../";
+import { StyledGridContainer, StyledTitle } from "./Options.styles";
 
 const Options = ({ optionType }) => {
   const [items, setItems] = useState([]);
@@ -27,25 +27,8 @@ const Options = ({ optionType }) => {
 
   return (
     <Box>
-      <Typography
-        sx={{
-          color: red[500],
-          fontWeight: "bold",
-          mb: ({ spacing }) => spacing(2),
-        }}
-      >
-        Choose your ice cream flavor:{" "}
-      </Typography>
-      <Grid
-        container
-        sx={{
-          bgcolor: grey[100],
-          padding: ({ spacing }) => spacing(2),
-          borderRadius: "0.5rem",
-        }}
-      >
-        {optionItems}
-      </Grid>
+      <StyledTitle>Choose your ice cream flavor:</StyledTitle>
+      <StyledGridContainer container>{optionItems}</StyledGridContainer>
     </Box>
   );
 };

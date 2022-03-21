@@ -5,7 +5,7 @@ describe("Entry > Options", () => {
   test("display image for each option scoop", async () => {
     render(<Options optionType="scoops" />);
 
-    // find images
+    // find images (asynchronous)
     const scoopImages = await screen.findAllByRole("img", { name: /scoop$/i });
 
     expect(scoopImages).toHaveLength(4);
